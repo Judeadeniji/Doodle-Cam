@@ -27,8 +27,8 @@
 
 .zoomCtn input[type=range] {
 background-color: #ffffff89;
-  width: 90%;
-  height: 5px;
+  width: 82px;
+  height: 3px;
   border-radius: 9px;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -44,8 +44,8 @@ background-color: #ffffff89;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 15px;
-  height: 15px;
+  width: 24px;
+  height: 24px;
   background: white;
   cursor: pointer;
   border-radius: 50%;
