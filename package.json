@@ -12,10 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-
+    "brace-js": "^1.2.0",
     "brace-js-scripts": "^1.2.2",
-    "brace-jsx": "file:../brace-js",
-    "brace-router": "file:../brace-router",
     "utiliti-js": "^2.0.3"
   },
   "devDependencies": {

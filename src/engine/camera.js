@@ -1,5 +1,5 @@
 // engine/camera.js
-import { createData } from "brace-jsx";
+import { createData } from "brace-js";
 import { saveImage } from "./indexDB";
 
 export const cameraSettings = createData({

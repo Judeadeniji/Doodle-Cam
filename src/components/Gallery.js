@@ -1,4 +1,4 @@
-import { createData, For, Suspense } from "brace-jsx";
+import { createData, For, Suspense } from "brace-js";
 import { getAllImages, getImageById } from "../engine/indexDB";
 import { showGallery, showPreview } from "../App";
 

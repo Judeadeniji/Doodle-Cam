@@ -1,4 +1,4 @@
-import { createData, If, memo } from "brace-jsx"
+import { createData, If, memo } from "brace-js"
 import Overlay from "./components/Overlay"
 import { Gallery, ImagePreview } from "./components/Gallery"
 
