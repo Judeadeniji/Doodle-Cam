@@ -1,6 +1,7 @@
 import { createData, If, memo } from "brace-js"
 import Overlay from "./components/Overlay"
 import { Gallery, ImagePreview } from "./components/Gallery"
+import {subscribe, unsubscribe, emit} from "./engine/context"
 
 const showAlert = createData(false);
 export const showGallery = createData(false)
@@ -11,6 +12,30 @@ export const showPreview = createData({
 })
 
 const MemoOverlay = memo(Overlay)
+
+
+////// EVENT COMTEXT //////
+
+// Define the function to be executed when the 'close-modal' event is emitted
+function closeModal({ detail }) {
+  // Extract the 'action' function from the event's 'detail' property and execute it
+  detail.action()
+}
+
+// Define the function to emit the 'close-modal' event
+function handleCloseModal() {
+  // Subscribe to the 'close-modal' event
+  subscribe('close-modal', closeModal);
+
+  // Emit the 'close-modal' event with an object containing an 'action' function
+  // The 'action' function sets the value of the 'showAlert' state variable to 'false'
+  emit('close-modal', { action: () => showAlert.set(false) });
+  
+  // Unsubscribe from the 'close-modal' event
+  unsubscribe('close-modal', closeModal)
+}
+
+////// END EVENT CONTEXT ///////
 
 const AlertModal = memo(function Alert() {
   const animation = {
@@ -49,7 +74,8 @@ const AlertModal = memo(function Alert() {
         </div>
 
         <div className="flex justify-end p-4">
-          <button style={colorRed} className="bg-white text-red-600 font-bold rounded-lg w-full h-full" on:click={() => showAlert.set(false)}>Close</button>
+          <button style={colorRed} className="bg-white text-red-600 font-bold
+          rounded-lg w-full h-full" on:click={handleCloseModal}>Close</button>
         </div>
       </div>
     </div>
@@ -62,12 +88,12 @@ function App() {
       <If eval={showPreview().isShowing}>
       <ImagePreview {...showPreview()} />
       </If>
-      <MemoOverlay />
+      <MemoOverlay key="overlay" />
       <If eval={showGallery()}>
         <Gallery/>
       </If>
       <If eval={showAlert()}>
-        <AlertModal />
+        <AlertModal key="alert" />
       </If>
     </div>
   );
