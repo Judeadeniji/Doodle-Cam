@@ -1,0 +1,99 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "/bootstrap-icons/bootstrap-icons.css";
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.zoomCtn {
+  background-color: #403d4890;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+}
+
+.zoomCtn:hover {
+  width: max-content;
+  border-radius: 36px;
+  height: unset;
+  padding: 18px 10px;
+}
+
+.zoomCtn input[type=range] {
+background-color: #ffffff89;
+  width: 90%;
+  height: 5px;
+  border-radius: 9px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  display: none;
+}
+
+/* Style the range thumb/knob */
+.zoomCtn input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  cursor: pointer;
+  border-radius: 50%;
+  top: 0;
+}
+
+.zoomCtn:hover input[type=range] {
+  display: inline;
+  transition: display .3s;
+  animation: inputReveal .4s forwards;
+}
+.zoomCtn:hover span{
+  display: none;
+}
+
+@keyframes inputReveal {
+  from {
+    width: 0;
+  }
+  to {
+    width: 90%;
+  }
+}
+@keyframes inputHide {
+  from {
+    width: 90%;
+  }
+  to {
+    display: none;
+    width: 0;
+  }
+}
+
+
+/* Indicator styles */
+.indicator {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
+
+/* Hover styles for small images */
+.border-transparent:hover {
+  border-color: #cbd5e0;
+}
+
+/* Active styles for small images */
+.border-gray-400 {
+  border-color: #a0aec0;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "doodle-camera-app",
+  "version": "1.0.0",
+  "description": "A Camera App that works natively on the web",
+  "main": "src/index.js",
+  "homepage": "/",
+  "scripts": {
+    "dev": "brace-js-script dev",
+    "build": "brace-js-script build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+
+    "brace-js-scripts": "^1.2.2",
+    "brace-jsx": "file:../brace-js",
+    "brace-router": "file:../brace-router",
+    "utiliti-js": "^2.0.3"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.1"
+  }
+}
