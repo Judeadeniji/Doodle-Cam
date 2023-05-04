@@ -14,7 +14,9 @@
   "dependencies": {
     "brace-js": "^1.2.0",
     "brace-js-scripts": "^1.2.2",
-    "utiliti-js": "^2.0.3"
+    "copy-webpack-plugin": "^11.0.0",
+    "utiliti-js": "^2.0.3",
+    "webpack-manifest-plugin": "^5.0.0"
   },
   "devDependencies": {
     "tailwindcss": "^3.3.1"
